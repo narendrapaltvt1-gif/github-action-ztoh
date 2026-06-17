@@ -1,0 +1,29 @@
+# Workflow name
+name: Hello
+# run on tigger
+on:
+  push:
+    branches: [main]
+jobs:
+
+  # Create a Job
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push code
+        run: echo "Push code to repo"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push code
+        run: echo "Build code in image by docker and push to docker registery"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push code
+        run: echo "include code for testing "
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push code
+        run: echo "deploy on production"
