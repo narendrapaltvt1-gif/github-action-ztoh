@@ -13,16 +13,19 @@ jobs:
       - name: Push code
         run: echo "Push code to repo"
   build:
+    needs: [code]
     runs-on: ubuntu-latest
     steps:
       - name: Push code
         run: echo "Build code in image by docker and push to docker registery"
   test:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Push code
         run: echo "include code for testing "
   deploy:
+    needs: [build,test]
     runs-on: ubuntu-latest
     steps:
       - name: Push code
