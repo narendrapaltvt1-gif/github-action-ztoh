@@ -17,6 +17,15 @@ jobs:
 
       - name: says hello to Username
         run: echo "Hello $USER"
+   # this is the name of jobs 2nd     
+  details:
+    #this is rnner,
+    runs-on: ubuntu-latest
+    steps:
+      # find version of docker and python
+      - name: show the version name of python & docker
+        run: docker --version && python --version
+  
       
     
   
